@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="mainContainer">
+
+    <!-- Sidebar start -->
+    <div style="margin: 0; padding: 0;">
+
+      <div class="sideBar">
+        <div class="optionContainer active">
+
+          <div class="tagNumber">1 </div>
+          <div class="desc-info">
+            <p class="heading2">STEP1</p>
+            <h2 class="heading1">YOUR INFO</h2>
+          </div>
+        </div>
+
+        <div class="optionContainer ">
+
+          <div class="tagNumber "> 2</div>
+          <div class="desc-info">
+            <p class="heading2">STEP1</p>
+            <h2 class="heading1">SELECT PLAN</h2>
+          </div>
+        </div>
+
+        <div class="optionContainer ">
+
+          <div class="tagNumber "> 3</div>
+          <div class="desc-info">
+            <p class="heading2">STEP1</p>
+            <h2 class="heading1">ADD-ONS</h2>
+          </div>
+        </div>
+
+        <div class="optionContainer ">
+
+          <div class="tagNumber "> 4</div>
+          <div class="desc-info">
+            <p class="heading2">STEP1</p>
+            <h2 class="heading1">SUMMARY</h2>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- Sidebar end -->
+
+    <!-- Step 1 start -->
+
+    <div class="side-left">
+
+      <div class="wrapper show">
+        <h1 class="heading">Personal Info</h1>
+        <p class="heading2 py-2">Please provide your name, email address, and phone number</p>
+        <form class="formInputs">
+          <div class="inputText">
+            <div>
+              <label for="name">Name</label>
+              <p>This field is requiered</p>
+            </div>
+            <input type="text" id="name" placeholder="e.g. Stephen King" name="name">
+          </div>
+
+          <div class="inputText ">
+            <div>
+              <label for="email">Email Address</label>
+              <p>This field is requiered</p>
+            </div>
+            <input type="email" id="email" placeholder="e.g. stephenking@lorem.com" name="email">
+          </div>
+
+          <div class="inputText">
+            <div>
+              <label for="phone">Phone Number</label>
+              <p>This field is requiered</p>
+            </div>
+            <input type="number" id="phone" placeholder="e.g. +1 234 567 890" name="phone">
+          </div>
+        </form>
+
+      </div>
+
+      <div class="wrapper">
+        <h1 class="heading">Select your plan</h1>
+        <p class="heading2 py-2">You have the option of monthly or yearly billing.</p>
+        <div class="containerCard planContainer">
+
+          <label class="card plan" onclick="handlePriceOfPlan('arcade')">
+            <input type="radio" name="plan" checked />
+            <div class="planChecked">
+              <img src="./assets/images/icon-arcade.svg" />
+              <div>
+                <p class="titleCard">Arcade</p>
+                <p id="arcadeIsPrice" class="heading2">$9/mo</p>
+              </div>
+            </div>
+          </label>
+
+
+
+          <label class="card plan" onclick="handlePriceOfPlan('advanced')">
+            <input type="radio" name="plan" />
+            <div class="planChecked">
+              <img src="./assets/images/icon-advanced.svg" />
+              <div>
+                <p class="titleCard">Advanced</p>
+                <p id="advanceIsPrice" class="heading2">$12/mo</p>
+              </div>
+            </div>
+          </label>
+
+
+          <label class="card plan" onclick="handlePriceOfPlan('pro')">
+            <input type="radio" name="plan" />
+            <div class="planChecked">
+              <img src="./assets/images/icon-pro.svg" />
+              <div>
+                <p class="titleCard">Pro</p>
+                <p id="proIsPrice" class="heading2">$15/mo</p>
+              </div>
+            </div>
+          </label>
+        </div>
+        <div class="bg-ligth typeContract">
+          <label class="switch ">
+            <input type="checkbox" id="planSwitch" />
+
+            <span class="slider round  "></span>
+            <span class="planTitle"></span>
+
+
+          </label>
+
+        </div>
+      </div>
+
+      <div class="wrapper">
+        <h1 class="heading">Pick add-ons</h1>
+        <p class="heading2 py-2"> Add-ons help enhance your gaming experience.</p>
+        <div class="containerCard card-addOns">
+
+          <label class="card active" onclick="handleAddOns()">
+
+            <input type="checkbox" class="checkbox" />
+            <div class="description">
+              <div class="checkedBox"></div>
+              <div class="desc-content">
+
+                <h2>
+                  Online service
+                </h2>
+                <p>
+                  Access to multiplayer games
+                </p>
+              </div>
+              <p id="servicePrice" class="price">+$1/mo</p>
+
+            </div>
+
+          </label>
+
+          <label class="card active" onclick="handleAddOns()">
+
+            <input type="checkbox" class="checkbox" />
+            <div class="description">
+              <div class="checkedBox"></div>
+              <div class="desc-content">
+
+                <h2>
+                  Larger storage
+                </h2>
+                <p>
+                  Extra 1TB of cloud save
+                </p>
+              </div>
+              <p id="storagePrice" class="price">+$1/mo</p>
+
+            </div>
+
+          </label>
+
+
+          <label class="card active" onclick="handleAddOns()">
+
+            <input type="checkbox" class="checkbox" />
+            <div class="description">
+              <div class="checkedBox"></div>
+              <div class="desc-content">
+
+                <h2>
+                  Customizable profile
+                </h2>
+                <p>
+                Custom theme on your profile
+                </p>
+              </div>
+              <p id="profilePrice" class="price">+$1/mo</p>
+
+            </div>
+
+          </label>
+
+
+        </div>
+
+      </div>
+
+
+      <div class="wrapper ">
+        <h1 class="heading"> Finishing up </h1>
+        <p class="heading2 py-2"> Double-check everything looks OK before confirming.</p>
+        <div class="containerDetils">
+          <ul class="">
+            <li class="list">
+              <div class="list-descrition">
+                <p id="titleFinal"> Arcade(monthly) </p>
+                <a href="#">Changes</a>
+              </div>
+              <p class="list-price" id="planPriceFinal"> $9/mo </p>
+            </li>
+
+            <li class="list">
+              <div class="list-descrition">
+                <p> Arcade(monthly) </p>
+              </div>
+              <p class="list-price"> $9/mo </p>
+            </li>
+
+            <li class="list">
+              <div class="list-descrition">
+                <p> Arcade(monthly) </p>
+              </div>
+              <p class="list-price"> $9/mo </p>
+            </li>
+          </ul>
+          <div class="totalPriceContainer">
+            <p class="heading2">Totl(per month)</p>
+            <p class="priceTotal">+12/mo</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="wrapper">
+        <div class="finalStep">
+          <img src="/assets/images/icon-thank-you.svg" />
+          <h1 class="heading"> Thank you! </h1>
+          <p class="heading2 py-2"> Thanks for confirming your subscription! We hope you have fun
+            using our platform. If you ever need support, please feel free
+            to email us at support@loremgaming.com. </p>
+        </div>
+
+
+
+      </div>
+      <div class="containerButtons">
+        <button class="btnClear hidden" id="btnBack">Go Back</button>
+        <button class="btnPrimary " id="btnStep">Next Step</button>
+      </div>
+
+
+    </div>
+
+
+
+
+
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Jasson Caceres</a>.
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,717 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(241, 246, 255);
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    padding: 0;
+    margin: 0;
+}
+
+
+.containerButtons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.mainContainer {
+    display: flex;
+
+    flex-direction: column;
+    max-width: 1220px;
+    margin: 0 auto;
+    min-height: calc(100vh - 200px);
+
+    height: 100%;
+}
+
+
+
+.btnClear {
+    color: rgb(26, 76, 177);
+    margin-top: 40px;
+    border-radius: 5px;
+    padding: 16px 30px;
+    width: 160px;
+    display: block;
+    background: transparent;
+    font-weight: 500;
+
+    border: none;
+    cursor: pointer;
+    margin-right: auto;
+    font-size: medium;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.btnClear:hover {
+    background-color: rgb(241, 246, 255);
+    border: none;
+}
+
+.sideBar {
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    width: 100%;
+    height: 220px;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    background-image: url('./assets/images/bg-sidebar-mobile.svg');
+
+}
+
+.sideBar .optionContainer .desc-info {
+    display: none;
+}
+
+.side-left {
+    position: relative;
+    /* padding: 20px 30px 10px; */
+    top: -100px;
+    margin: 0 20px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+
+.optionContainer {
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    gap: 20px;
+    padding: 30px 0;
+
+}
+
+
+
+.tagNumber {
+    padding: 10px;
+    width: 40px;
+    border: 1px solid white;
+    color: white;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+.optionContainer.active .tagNumber {
+    background-color: rgb(180, 225, 225);
+    border: none;
+    color: rgb(67, 67, 67);
+
+}
+
+.wrapper {
+    display: none;
+    width: 100%;
+}
+
+.wrapper.show {
+    display: block;
+}
+
+
+.heading {
+    font-size: xx-large;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.py-2 {
+    padding: 10px 0;
+}
+
+.heading1 {
+    color: white;
+    font-size: large;
+    letter-spacing: 1px;
+    margin-top: 2.5px;
+    font-weight: normal;
+    font-family: 'Ubuntu', sans-serif;
+
+
+}
+
+.formInputs {
+    padding-top: 50px;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.heading2 {
+    color: #a5a5a5;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-size: small;
+    font-family: 'Ubuntu', sans-serif;
+
+}
+
+.btnPrimary {
+    background-color: rgb(26, 76, 177);
+    color: white;
+    margin-top: 40px;
+    border-radius: 5px;
+    padding: 16px 30px;
+    width: 160px;
+    display: block;
+    border: none;
+    margin-left: auto;
+    font-size: medium;
+    cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.btnPrimary:hover {
+    background-color: rgb(17, 64, 157);
+}
+
+.bg-ligth {
+    background-color: rgb(241, 246, 255);
+
+}
+
+
+
+.inputText {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 0;
+}
+
+.inputText label {
+    color: rgb(43, 66, 136);
+    font-family: 'Ubuntu', sans-serif;
+    font-size: smaller;
+    font-weight: 300;
+}
+
+.inputText>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputText input {
+    border: 1px solid rgb(43, 66, 136);
+    border-radius: 5px;
+    padding: 16px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: small;
+    color: rgb(43, 66, 136);
+
+}
+
+.inputText div p {
+    display: none;
+}
+
+.inputText.error div p {
+    color: rgb(237, 57, 57);
+    display: block;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: smaller;
+    font-weight: 600;
+}
+
+.inputText.error input {
+    border-color: red;
+}
+
+
+
+/* step 2 */
+
+.card {
+
+    padding: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    background-color: white;
+    border: 1px solid rgba(145, 145, 145, 0.451);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+
+.card:hover {
+    border: 1px solid rgb(26, 76, 177);
+    box-shadow: none;
+}
+
+.card.active {
+    border: 1px solid rgb(26, 76, 177);
+    background: rgb(250, 250, 255);
+    box-shadow: none;
+
+
+}
+
+.card img {
+    margin-right: 20px;
+}
+
+.card div .titleCard {
+    color: rgb(52, 83, 138);
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    display: block;
+}
+
+
+
+.containerCard {
+    display: grid;
+    width: 100%;
+    gap: 20px;
+    padding-top: 50px;
+    grid-template-columns: 1fr;
+
+}
+
+
+
+
+@media (min-width:768px) {
+
+    body {
+        padding: 50px;
+    }
+
+    .mainContainer {
+        flex-direction: row;
+        gap: 100px;
+        width: 80%;
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    .sideBar {
+        flex-direction: column;
+        width: 400px;
+        padding-left: 30px;
+        height: 100%;
+        border-radius: 20px;
+        background-image: url('./assets/images/bg-sidebar-desktop.svg');
+        justify-content: start;
+
+    }
+
+    .sideBar .optionContainer .desc-info {
+        display: block;
+    }
+
+    .side-left {
+        top: 0;
+        width: 100%;
+    }
+
+    .containerCard {
+        gap: 20px;
+        padding-top: 50px;
+        flex-grow: 1;
+        grid-template-columns: 1fr 1fr 1fr;
+
+    }
+
+    .card {
+        width: 180px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card img {
+        margin-bottom: 40px;
+    }
+}
+
+.checkContract {
+    margin: 0 30px;
+}
+
+
+
+
+.typeContract {
+    padding: 20px 0;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    color: rgb(141, 141, 141);
+    font-weight: 500;
+    border-radius: 8px;
+    position: relative;
+    margin: 40px 0 0 0;
+
+}
+
+/* .typeContract::before {
+    content: "Monthly";
+
+}
+
+
+
+.typeContract::after {
+    content: "Yearly";
+    background: transparent;
+} */
+
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 22px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rebeccapurple;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+.planTitle {
+    position: relative;
+    width: fit-content;
+}
+
+.planTitle::before {
+    content: "Montly";
+    position: absolute;
+    right: 40px;
+    top: 2px;
+}
+
+.planTitle::after {
+    content: "Yearly";
+    position: absolute;
+    left: 40px;
+    top: 2px;
+
+}
+
+.typeContract .switch .planTitle::before {
+    color: purple;
+}
+
+.typeContract .switch input:checked~.planTitle::after {
+    color: #2196F3;
+}
+
+.typeContract .switch input:checked~.planTitle::before {
+    color: rgb(141, 141, 141);
+}
+
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.card-addOns {
+    grid-template-columns: 1fr;
+    width: 100%;
+}
+
+
+.card-addOns .card {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: white;
+
+}
+
+.card-addOns .card .description {
+    padding: 16px;
+    display: flex;
+    width: 100%;
+    border: 1px solid #a5a5a5;
+    border-radius: 4px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    transition: ease-in-out;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.card-addOns .card .description:hover {
+    border-color: rgb(120, 22, 218);
+}
+
+.card-addOns .card .description h2 {
+    font-size: medium;
+    color: rgb(52, 83, 138);
+}
+
+.card-addOns .card .description p {
+    font-size: medium;
+    font-weight: 300;
+    font-size: small;
+    color: #a5a5a5;
+    margin-top: 4px;
+
+}
+
+.card-addOns .card .checkbox {
+    display: none;
+}
+
+.checkedBox {
+    height: 12px;
+    width: 12px;
+    border: 1px solid #a5a5a5;
+    border-radius: 2px;
+    display: block;
+    background: transparent;
+
+}
+
+.card-addOns .card input:checked~.description {
+    border: 1px solid rgb(120, 22, 218);
+    background: rgb(250, 250, 255);
+}
+
+.card-addOns .card input:checked~.description .checkedBox {
+    background-color: rgb(120, 22, 218);
+    border: 1px solid rgb(120, 22, 218);
+    position: relative;
+}
+
+.card-addOns .card input:checked~.description .checkedBox::after {
+    content: "";
+    width: 6px;
+    height: 3px;
+    border: 2px;
+    position: absolute;
+    border: white solid;
+    border-width: 0 0 2.5px 2.5px;
+    top: 2px;
+    left: 2px;
+
+    transform: rotate(-50deg);
+}
+
+
+
+.card-addOns .card .description .price {
+    font-size: medium;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    color: rgb(120, 22, 218);
+
+}
+
+
+/* Step04 */
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+.containerDetils {
+    margin-top: 40px;
+}
+
+.containerDetils ul {
+    width: 100%;
+    border-radius: 12px;
+    background-color: rgb(241, 246, 255);
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+}
+
+.containerDetils .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.containerDetils .list {
+    display: flex;
+    font-family: 'Ubuntu', sans-serif;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 400;
+    padding: 12px 0;
+    font-size: 14px;
+    align-items: center;
+    color: #a5a5a5;
+}
+
+.containerDetils ul li:first-child {
+    border-bottom: 1px solid #a5a5a5;
+    color: rgb(52, 83, 138);
+    font-weight: 500;
+
+}
+
+.containerDetils .list .list-descrition a {
+    font-size: small;
+    color: rgb(134, 32, 237);
+    text-decoration: none;
+}
+
+.containerDetils .list .list-price {
+    color: rgb(52, 83, 138);
+}
+
+.containerDetils .list .list-descrition a:hover {
+    text-decoration: underline;
+}
+
+.totalPriceContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.totalPriceContainer {
+    color: rgb(134, 32, 237);
+    font-weight: 500;
+    font-size: large;
+}
+
+
+.finalStep {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 140px;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+
+
+/* setp 3 */
+.planContainer .card {
+    padding: 0;
+    border: 0;
+}
+
+.planContainer .card input {
+    display: none;
+}
+
+.planContainer .card input .planChecked {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+}
+
+.planContainer .card .planChecked {
+    padding: 16px;
+    width: 100%;
+    border: 1px solid #d7d7d7;
+    border-radius: 8px;
+}
+
+.planContainer .card .planChecked div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.planContainer .card input:checked~.planChecked {
+    background-color: rgb(241, 246, 255);
+    border-color: rgb(120, 22, 218);
+    padding: 16px;
+    width: 100%;
+}
+
+.promotion {
+    color: rgb(43, 66, 136);
+    font-family: 'Ubuntu', sans-serif;
+    font-size: small;
+    font-weight: 500;
+    text-transform: capitalize;
+}
